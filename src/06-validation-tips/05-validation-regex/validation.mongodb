@@ -9,6 +9,13 @@ db.runCommand({
       bsonType: "object",
       required: ["email", "password", "role"],
       additionalProperties: true, //Quitar la flexibilidad a mongo
+      /*SI se coloca en false
+           additionalProperties: false, //Quitar la flexibilidad a mongo
+           properties: {
+             _id: {
+                bsonType: 'objectId'
+             },
+       }**/
       properties: {
         name: {
           bsonType: "string",
