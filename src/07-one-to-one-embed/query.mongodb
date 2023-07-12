@@ -1,0 +1,12 @@
+use("platzi_store");
+
+db.users.find();
+
+db.users.find({
+  "address.city": "Cali",
+});
+
+/* db.users.find({
+  "shipping_address.city": "Bogota",
+}).count();
+ */
