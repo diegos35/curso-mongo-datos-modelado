@@ -1,0 +1,24 @@
+use("platzi_store");
+
+//db.orders.find({ user_id: ObjectId("64ae1932f3d3dbc43c3edb33") }).count();
+db.orders.find({ user_id: ObjectId("64ae197e07fdccf1459820db") });
+db.users.findOne({ _id: ObjectId("64ae1932f3d3dbc43c3edb33") });
+db.users.find();
+
+db.orders.aggregate([
+  {
+    $match: {
+      _id: ObjectId("64b036af63ab3252cb1f3c1f"),
+    },
+  },
+
+  {
+    $lookup: {
+      pipeline: [{ $project: { password: 0, role: 0, social_accounts: 0 } }], //omite campos
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user",
+    },
+  },
+]);
