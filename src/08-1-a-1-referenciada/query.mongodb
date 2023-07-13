@@ -13,4 +13,7 @@ db.stores.aggregate([
       as: "detail",
     },
   },
+  {
+    $unwind: "$relatedInfo",
+  },
 ]);

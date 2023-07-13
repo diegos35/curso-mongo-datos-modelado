@@ -1,11 +1,11 @@
 use("platzi_store");
 
-db.stores.insertOne({
+/* db.stores.insertOne({
   storeId: "ST001",
   name: "Diego Store",
   address: "Cr 232",
 });
-
+ */
 db.stores_details.insertOne({
   storeId: "ST001",
   description: "descr descr",
